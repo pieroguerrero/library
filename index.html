@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="css/output.css">
+
+    <!--Totally optional :) -->
+
+
+    <script type="text/javascript" src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- https://www.tailwindtoolbox.com/templates/admin-template -->
+    <header>
+        <nav class="pt-2 pb-1 h-auto w-full">
+            <div class="flex flex-wrap items-center">
+                <div id="icon" class="text-white">
+                    <a href="#" aria-label="Home">
+                        <span class="text-xl pl-2">
+                            🥳
+                        </span>
+                    </a>
+                </div>
+                <div id="search-box" class="flex-1">
+                    <input type="search" placeholder="Search" name="search-book" id="search-book">
+                    <div id="search-icon">
+                        <svg class="fill-current pointer-events-none text-white w-4 h-4"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path
+                                d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <il><a href="">Acive</a></il>
+                        <il><a href="">link</a></il>
+                        <il></il>
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+    </header>
+    <main class="flex flex-row">
+        <div>
+            <ul>
+                <li>
+                    <img src="img/add_circle_outline_black_24dp.svg" alt="">
+                    <p>Create</p>
+                </li>
+                <li>
+                    <img src="img/delete_black_24dp.svg" alt="">
+                    <p>Delete</p>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <p></p>
+            <div>
+                <div>
+                    <input type="hidden" name="book-id" value="">
+                    <input type="image" src="img/mode_edit_black_24dp.svg" alt="">
+                    <div>
+                        <img src="img/unknown-book-263x300-1.jpg" alt="">
+                        <div>
+                            <p>Title 1</p>
+                            <p>123 pages</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <input type="checkbox" name="select" id="select" value="0">
+                            <label for="select"></label>
+                        </div>
+                        <input type="checkbox" name="" id="read" value="0">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
