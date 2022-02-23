@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.selected-card {
+    border-bottom-color: rgb(234 179 8 / 1);
+}
