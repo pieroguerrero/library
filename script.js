@@ -24,7 +24,7 @@ function createBooks() {
     const book7 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false, "img/mode_edit_black_24dp.svg");
     const book8 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false, "img/mode_edit_black_24dp.svg");
     const book9 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false, "img/mode_edit_black_24dp.svg");
-    const book10 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false, "img/mode_edit_black_24dp.svg");
+    const book10 = new Book("The Hobbit", "J.R.R. Tolkien", 2300, false, "img/mode_edit_black_24dp.svg");
 
     myLibrary.push(book1);
     myLibrary.push(book2);
@@ -46,13 +46,6 @@ function assignSelection() {
     for (const checkbox of selections) {
 
         checkbox.addEventListener('change', function () {
-            // if (this.checked) {
-            //     const n = this.id.split("-")[1];
-            //     const card = document.getElementById("book-" + n);
-
-            // } else {
-            //     console.log("Checkbox is not checked..");
-            // }
             const n = this.id.split("-")[1];
             const card = document.getElementById("book-" + n);
             card.classList.toggle("selected-card");
