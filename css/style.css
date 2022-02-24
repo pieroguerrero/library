@@ -3,5 +3,46 @@
 @tailwind utilities;
 
 .selected-card {
-    border-bottom-color: rgb(234 179 8 / 1);
+    border-bottom-color: rgb(234 179 8 / 1) !important;
+    /* border-bottom-color: rgb(234, 8, 8) !important; */
+}
+
+.div-book-card {
+    @apply flex flex-col items-start h-fit gap-2 rounded-md bg-white p-4 pr-7 pb-6 shadow-lg border-b-[6px] border-b-sky-500;
+}
+
+.div-book-info {
+    @apply flex pl-5 justify-start items-center gap-4;
+}
+
+.div-book-info-text {
+    @apply flex flex-col gap-2 justify-center;
+}
+
+.div-book-controls {
+    @apply flex pl-5 w-full justify-between items-center;
+}
+
+.div-book-controls-checkbox {
+    @apply flex gap-2 items-center justify-center;
+}
+
+.div-book-controls-checkbox-input {
+    @apply rounded-sm bg-slate-200 border-transparent text-yellow-500 h-4 w-4;
+}
+
+.div-book-controls-checkbox-input:focus {
+    @apply border-transparent bg-slate-200 ring-1 ring-offset-2 ring-gray-500;
+}
+
+.div-book-controls-toggle-label {
+    @apply flex items-center cursor-pointer gap-2;
+}
+
+.div-book-controls-toggle-line {
+    @apply w-9 h-3 bg-slate-200 rounded-full shadow-inner;
+}
+
+.div-book-controls-toggle-dot {
+    @apply absolute w-5 h-5 bg-gray-400 rounded-full shadow -left-1 -top-1 transition;
 }
