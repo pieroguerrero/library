@@ -7,7 +7,11 @@
 }
 
 .div-book-card {
-    @apply flex flex-col items-start h-fit gap-2 rounded-md bg-white p-4 pr-7 pb-6 shadow-lg border-b-[6px] border-b-sky-500;
+    @apply flex flex-col items-start h-fit gap-2 rounded-md bg-white p-4 pr-7 pb-6 shadow-lg border-b-[6px] border-b-sky-500 min-w-fit w-full max-w-[390px];
+}
+
+.div-book-card:hover {
+    @apply relative top-1 left-1
 }
 
 .div-book-info {
@@ -23,11 +27,11 @@
 }
 
 .div-book-controls-checkbox {
-    @apply flex gap-2 items-center justify-center;
+    @apply flex gap-3 items-center justify-center;
 }
 
 .div-book-controls-checkbox-input {
-    @apply rounded-sm bg-slate-200 border-transparent text-yellow-500 h-4 w-4;
+    @apply rounded-sm bg-slate-200 border-transparent text-yellow-500 h-5 w-5;
 }
 
 .div-book-controls-checkbox-input:focus {
