@@ -98,6 +98,7 @@ function getHTMLBookControlsToggel(book) {
 
     const divRead = document.createElement("div");
     divRead.setAttribute("class", "text-gray-700 font-medium");
+    divRead.textContent = "Read";
     labelToggle.appendChild(divRead);
 
     return divToggle;
@@ -171,6 +172,15 @@ function toggleBookSelection(book) {
     book.selected = !book.selected;
 }
 
+function countBooksToDelete(selected) {
+    const spanCount = document.getElementById("deleteCount");
+    let currentCount = Number(spanCount.textContent.substring(1, spanCount.textContent.length - 1));
+
+    console.log("currentCount= " + currentCount);
+    currentCount += (selected) ? 1 : -1;
+    spanCount.textContent = "(" + currentCount + ")";
+}
+
 function assignCardEvents() {
     const editButtons = document.querySelectorAll(".edit-book-button");
 
@@ -186,6 +196,9 @@ function assignCardEvents() {
 
             const modalPopUp = document.getElementById("favDialog");
             modalPopUp.style.display = "block";
+
+            const pPopUpTitle = document.getElementById("popup-title");
+            pPopUpTitle.textContent = "Edit Book";
         });
     }
 
@@ -197,6 +210,8 @@ function assignCardEvents() {
             const bookID = this.id.split("-")[1];
             const book = myLibrary.find(bookElement => bookElement.id == bookID);
             toggleBookSelection(book)
+
+            countBooksToDelete(this.checked);
         });
     }
 
@@ -209,6 +224,8 @@ function assignCardEvents() {
             book.wasRead = this.checked;
         });
     }
+
+
 }
 
 function clearModalControls() {
@@ -301,7 +318,7 @@ function assignDashboardEvents() {
         const qttSelected = myLibrary.length - nonSelectedBooks.length;
         if (qttSelected > 0) {
 
-            if (window.confirm("Are you sure you want to remove " + qttSelected + " books?")) {
+            if (window.confirm("Are you sure you want to delete " + qttSelected + " books?")) {
 
                 myLibrary = nonSelectedBooks;
 
@@ -311,11 +328,11 @@ function assignDashboardEvents() {
                     searchBooks(btnSearch.value);
                 } else refreshBookList(myLibrary);
 
-                window.alert(qttSelected + " books were removed successfully.");
+                window.alert(qttSelected + " books were deleted successfully.");
             }
         } else {
 
-            window.alert("There are no books selected to remove.");
+            window.alert("There are no books selected to delete.");
         }
     });
 
@@ -325,6 +342,10 @@ function assignDashboardEvents() {
         clearModalControls();
         const modalPopUp = document.getElementById("favDialog");
         modalPopUp.style.display = "block";
+
+        const pPopUpTitle = document.getElementById("popup-title");
+        pPopUpTitle.textContent = "Create New Book"
+
     });
 
     const btnSearch = document.getElementById("search-book");
@@ -382,6 +403,12 @@ function assignModalEvents() {
 
     });
 
+    const btnCancel = document.getElementById("btnCancelModal");
+    btnCancel.addEventListener("click", function () {
+        const modalPopUp = document.getElementById("favDialog");
+        modalPopUp.style.display = "none";
+    });
+
     window.addEventListener("click", function (e) {
         const modalPopUp = document.getElementById("favDialog");
         if (e.target == modalPopUp) {
@@ -399,6 +426,9 @@ function refreshBookList(arrBookList) {
         const bookCard = getHTMLCard(book);
         divBookList.appendChild(bookCard);
     }
+
+    const qttBooks = document.getElementById("cant-books");
+    qttBooks.textContent = arrBookList.length + (arrBookList.length === 1 ? " book was found" : " books were found");
 
     assignCardEvents();
 }

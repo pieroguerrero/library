@@ -10,38 +10,40 @@
     <link rel="stylesheet" href="css/output.css">
 
 
-
+    <link rel="stylesheet" href="font/ubuntu/ubuntu-font.css">
 
     <script type="text/javascript" src="script.js" defer></script>
 </head>
 
 <body>
     <!-- https://www.tailwindtoolbox.com/templates/admin-template -->
-    <header class="bg-sky-500">
-        <nav class="pt-2 pb-1 h-auto w-full">
-            <div class="flex flex-wrap items-center">
-                <div id="icon" class="text-white">
-                    <a href="#" aria-label="Home">
-                        <span class="text-xl pl-2">
-                            🥳
-                        </span>
-                    </a>
+    <header class="bg-bar-background px-6 pt-4 w-full">
+        <nav class="pt-2 pb-1 h-auto md:h-32 w-full">
+            <div class="flex flex-wrap items-center justify-between">
+                <div id="icon" class="flex flex-wrap items-center justify-center gap-2">
+                    <img src="img/local_library_black_48dp.svg" class="w-[70px]" alt="">
+                    <p class="text-xl text-bar-text font-extrabold">Book Keeper</p>
                 </div>
-                <div id="search-box" class="flex-1">
-                    <input type="search" placeholder="Search" name="search-book" id="search-book">
-                    <div id="search-icon">
+                <div id="search-box">
+                    <span ur="url('../img/search-24px.png')"
+                        class="relative before:absolute before:content-[url('../img/search-black-24dp.svg')] before:left-[15px] before:top-[-3px]"></span>
+                    <input type="search" placeholder="Search" name="search-book" id="search-book"
+                        class="peer w-full h-12 pl-12 rounded-full md:w-[600px] border-searchbox-border shadow-inner">
+                    <span
+                        class="relative before:absolute peer-focus:before:content-[url('../img/keyboard_return_black_18dp.svg')] before:top-[4px] before:left-[-47px] after:absolute after:text-[0.6rem] peer-focus:after:content-['ENTER'] after:whitespace-pre-wrap after:top-[-4px] after:left-[-50px] after:text-slate-400"></span>
+                    <!-- <div id="search-icon">
                         <svg class="fill-current pointer-events-none text-white w-4 h-4"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                             <path
                                 d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
                             </path>
                         </svg>
-                    </div>
+                    </div> -->
                 </div>
                 <div id="menu">
                     <ul>
-                        <il><a href="">Acive</a></il>
-                        <il><a href="">link</a></il>
+                        <il><a href=""></a></il>
+                        <il><a href=""></a></il>
                         <il></il>
                     </ul>
                 </div>
@@ -51,23 +53,29 @@
         </nav>
     </header>
     <main class="flex flex-row">
-        <div class="flex items-center justify-center bg-sky-500 h-auto z-10 w-52 px-5 bottom-0 shadow-xl">
+        <div class="flex items-start justify-center bg-bar-background  w-52 px-6 py-[60px] bottom-0">
             <ul class="flex flex-col gap-5">
                 <li class="flex flex-row gap-2">
-                    <img src="img/add_circle_outline_black_24dp.svg" alt="">
-                    <button id="btnCreate">Create</button>
+                    <img src="img/add_circle_outline_black_24dp.svg" class="h-8" alt="">
+                    <button class="text-bar-text font-bold text-lg" id="btnCreate">Create Book</button>
                 </li>
                 <li class="flex flex-row gap-2">
-                    <img src="img/delete_black_24dp.svg" alt="">
+                    <img src="img/delete_black_24dp.svg" class="h-8" alt="">
                     <!-- <a>Delete</a> -->
-                    <button id="btnDelete">Delete</button>
+                    <button class="text-bar-text font-bold text-lg" id="btnDelete">Delete</button><span id="deleteCount"
+                        class="text-bar-text font-bold text-lg">(0)</span>
                 </li>
             </ul>
         </div>
         <div class="flex-1">
-            <p>Books List</p>
+            <p id="cant-books"
+                class="shadow-inner flex justify-end items-center pr-8 pt-4 bg-main-content-background font-medium italic">
+                12
+                books
+                were found
+            </p>
             <div
-                class="book-list grid grid-cols-[repeat(auto-fit,_minmax(20%,_1fr))] content-start gap-8 bg-slate-200 h-screen p-8">
+                class="book-list grid grid-cols-[repeat(auto-fit,_minmax(20%,_1fr))] content-start gap-8 bg-main-content-background p-8 pt-4">
                 <!-- <div id="book-0" class="book div-book-card">
                     <input class="edit-book-button" id="edit-0" type="image" src="img/mode_edit_black_24dp.svg" alt="">
                     <div class="div-book-info">
@@ -151,29 +159,42 @@
             </div>
         </div>
     </main>
+    <footer class="z-50 flex items-center justify-center gap-3 bg-black text-white p-3 text-lg">
+        <span>Created by <strong><a id="link-footer" href="https://github.com/pieroguerrero">pieroguerrero</a>
+            </strong></span>
+        <a href="https://github.com/pieroguerrero">
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+        </a>
+    </footer>
     <div id="favDialog"
-        class="hidden fixed top-0 left-0 z-10 pt-[5%] w-full h-full overflow-auto bg-slate-900 bg-opacity-50">
+        class="hidden fixed top-0 left-0 z-50 pt-[5%] w-full h-full overflow-auto bg-slate-900 bg-opacity-50">
         <div class="flex flex-col items-center justify-center w-fit mx-auto">
-            <form method="dialog" id="formDialog" class="bg-white rounded p-7">
-                <p>Edit book</p>
-                <fieldset>
+            <form method="dialog" id="formDialog" class="bg-white rounded p-8">
+                <p id="popup-title" class="font-bold text-xl">Edit Book</p>
+                <fieldset class="p-5">
                     <input type="hidden" id="hid-book-id" name="hid-book-id" value="-1">
-                    <legend>Edit</legend>
-                    <div>
-                        <div>
-                            <label for="titlem">Title</label>
-                            <input type="text" id="titlem" name="titlem" placeholder=" " required>
-                            <span></span>
+                    <!-- <legend>Edit</legend> -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-1">
+                            <label class="font-semibold text-bar-text" for="titlem">Title:</label>
+                            <input class="peer text-bar-text rounded-md shadow-inner text-[100%] w-[280px] p-1 pl-2"
+                                type="text" id="titlem" name="titlem" placeholder=" " required>
+                            <span class="relative peer-required:after:absolute peer-required:after:text-white peer-required:after:bg-bar-text peer-required:after:content-['required'] peer-required:after:text-xs peer-required:after:top-[-65px] peer-required:after:left-[215px] peer-required:after:py-[4px] peer-required:after:px-2
+                                peer-required:after:rounded-md"></span>
                         </div>
-                        <div>
-                            <label for="authorm">Author</label>
-                            <input type="text" id="authorm" name="authorm" placeholder=" " required>
-                            <span></span>
+                        <div class="flex flex-col gap-1">
+                            <label class="font-semibold text-bar-text" for="authorm">Author:</label>
+                            <input class="peer text-bar-text rounded-md shadow-inner text-[100%] w-[280px] p-1 pl-2"
+                                type="text" id="authorm" name="authorm" placeholder=" " required>
+                            <span class="relative peer-required:after:absolute peer-required:after:text-white peer-required:after:bg-bar-text peer-required:after:content-['required'] peer-required:after:text-xs peer-required:after:top-[-65px] peer-required:after:left-[215px] peer-required:after:py-[4px] peer-required:after:px-2
+                            peer-required:after:rounded-md"></span>
                         </div>
-                        <div>
-                            <label for="npagesm">Number of Pages</label>
-                            <input type="number" id="npagesm" name="npagesm" placeholder=" " required>
-                            <span></span>
+                        <div class="flex flex-col gap-1">
+                            <label class="font-semibold text-bar-text" for="npagesm">Number of Pages:</label>
+                            <input class="peer text-bar-text rounded-md shadow-inner text-[100%] w-[280px] p-1 pl-2"
+                                type="number" id="npagesm" name="npagesm" placeholder=" " required>
+                            <span class="relative peer-required:after:absolute peer-required:after:text-white peer-required:after:bg-bar-text peer-required:after:content-['required'] peer-required:after:text-xs peer-required:after:top-[-65px] peer-required:after:left-[215px] peer-required:after:py-[4px] peer-required:after:px-2
+                            peer-required:after:rounded-md"></span>
                         </div>
                         <div>
                             <label for="toogleModal" class="flex items-center cursor-pointer gap-2">
@@ -189,7 +210,7 @@
                                     </div>
                                 </div>
                                 <!-- label -->
-                                <div class="text-gray-700 font-medium">
+                                <div class="text-bar-text font-semibold">
                                     Read
                                 </div>
                             </label>
@@ -197,9 +218,11 @@
                     </div>
                 </fieldset>
 
-                <menu>
-                    <button id="btnCancelModal">Cancel</button>
-                    <button id="btnSaveModal">Save</button>
+                <menu class="flex justify-center items-center gap-2 mt-4">
+                    <button class="m-auto py-2 px-4 border-0 bg-bar-background w-28 text-bar-text rounded-sm font-bold"
+                        id="btnCancelModal">Cancel</button>
+                    <button class="m-auto w-28 py-2 px-4 border-0 bg-bar-background text-bar-text rounded-sm font-bold"
+                        id="btnSaveModal">Save</button>
                 </menu>
             </form>
 
