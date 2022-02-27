@@ -36,7 +36,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 
 .div-book-card {
-    @apply flex flex-col items-start h-fit gap-2 rounded-md bg-card-background p-4 pr-7 pb-6 shadow-lg border-b-[6px] border-b-card-border min-w-fit w-full max-w-[390px];
+    @apply flex flex-col items-start gap-5 rounded-md bg-card-background p-4 pr-7 pb-6 shadow-lg border-b-[6px] border-b-card-border min-w-fit w-full max-w-[395px];
 }
 
 .div-book-card:hover {
