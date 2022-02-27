@@ -19,7 +19,7 @@
     <!-- https://thegreatestbooks.org/ -->
     <header class="bg-bar-background px-6 pt-4 w-full">
         <nav class="pt-2 pb-1 h-auto md:h-32 w-full">
-            <div class="flex flex-wrap items-center justify-between">
+            <div class="flex flex-wrap items-center justify-center sm:justify-between">
                 <div id="icon" class="flex flex-wrap items-center justify-center gap-2">
                     <img src="img/local_library_black_48dp.svg" class="w-[70px]" alt="">
                     <p class="text-xl text-bar-text font-extrabold">Book Keeper</p>
@@ -52,9 +52,9 @@
 
         </nav>
     </header>
-    <main class="flex flex-row">
-        <div class="flex items-start justify-center bg-bar-background  w-52 px-6 py-[60px] bottom-0">
-            <ul class="flex flex-col gap-5">
+    <main class="flex flex-col sm:flex-row">
+        <div class="flex items-start justify-center bg-bar-background  sm:w-52 px-6 py-[60px] bottom-0">
+            <ul class="flex sm:flex-col gap-10 sm:gap-5">
                 <li class="flex flex-row gap-2">
                     <img src="img/add_circle_outline_black_24dp.svg" class="h-8" alt="">
                     <button class="text-bar-text font-bold text-lg" id="btnCreate">Create Book</button>

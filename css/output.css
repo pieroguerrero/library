@@ -793,26 +793,6 @@ html {
   cursor: pointer;
 }
 
-.grid-cols-\[repeat\(auto-fit\2c _minmax\(20\%\2c _1fr\)\)\] {
-  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-}
-
-.grid-cols-\[repeat\(auto-fit\2c _minmax\(395px\2c _1fr\)\)\] {
-  grid-template-columns: repeat(auto-fit, minmax(395px, 1fr));
-}
-
-.grid-cols-\[repeat\(auto-fit\2c _minmax\(400px\2c _1fr\)\)\] {
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
-
-.grid-cols-\[repeat\(auto-fit\2c _minmax\(490px\2c _1fr\)\)\] {
-  grid-template-columns: repeat(auto-fit, minmax(490px, 1fr));
-}
-
-.grid-cols-\[repeat\(auto-fit\2c _minmax\(25\%\2c _1fr\)\)\] {
-  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
-}
-
 .flex-row {
   flex-direction: row;
 }
@@ -875,6 +855,18 @@ html {
 
 .gap-1 {
   gap: 0.25rem;
+}
+
+.gap-7 {
+  gap: 1.75rem;
+}
+
+.gap-9 {
+  gap: 2.25rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .overflow-auto {
@@ -1439,6 +1431,28 @@ input[type="search"]::-webkit-search-results-decoration {
   content: var(--tw-content);
 }
 
+@media (min-width: 640px) {
+  .sm\:w-52 {
+    width: 13rem;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:flex-col {
+    flex-direction: column;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
+  .sm\:gap-5 {
+    gap: 1.25rem;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:h-32 {
     height: 8rem;
@@ -1448,22 +1462,8 @@ input[type="search"]::-webkit-search-results-decoration {
     width: 600px;
   }
 
-  .md\:grid-cols-\[repeat\(auto-fit\2c _minmax\(20\%\2c _1fr\)\)\] {
-    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-  }
-
   .md\:grid-cols-\[repeat\(auto-fit\2c _minmax\(40\%\2c _1fr\)\)\] {
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-  }
-
-  .md\:grid-cols-\[repeat\(auto-fit\2c _minmax\(50\%\2c _1fr\)\)\] {
-    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:grid-cols-\[repeat\(auto-fit\2c _minmax\(20\%\2c _1fr\)\)\] {
-    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   }
 }
 
