@@ -137,17 +137,19 @@ function getHTMLCard(book) {
 
 function createBooks() {
 
-    const book1 = new Book("The Hobbit", "J.R.R. Tolkien", "295", false, "img/menu_book_black_48dp.svg");
-    const book6 = new Book("Super Bad", "J.R.R. Tolkien", "295", false, "img/menu_book_black_48dp.svg");
-    const book2 = new Book("The Hobbit", "J.R.R. Tolkien", "295", false, "img/menu_book_black_48dp.svg");
-    const book3 = new Book("Tia Julia", "J.R.R. Tolkien", "295", false, "img/menu_book_black_48dp.svg");
-    const book4 = new Book("The Hobbit", "J.R.R. Tolkien", "295", true, "img/menu_book_black_48dp.svg");
-    const book5 = new Book("The Hobbit", "J.R.R. Tolkien", "295", false, "img/menu_book_black_48dp.svg");
-    const book7 = new Book("Homo Sapiens", "J.R.R. Tolkien", "295", false, "img/menu_book_black_48dp.svg");
-    const book8 = new Book("The Hobbit", "J.R.R. Tolkien", "295", false, "img/menu_book_black_48dp.svg");
-    const book9 = new Book("Super Human", "J.R.R. Tolkien", "295", false, "img/menu_book_black_48dp.svg");
-    const book10 = new Book("The Hobbit", "J.R.R. Tolkien", "4218", true, "img/menu_book_black_48dp.svg");
+    const book0 = new Book("Don Quixote", "Miguel de Cervantes", "534", false, "img/books/lkhkljtqjtblzu5z3tusdbntj15a.jpeg");
+    const book1 = new Book("Anna Karenina", "Leo Tolstoy", "295", false, "img/books/jmhm8mrn2xjclr6v07rj00s6xl5g.jpeg");
+    const book6 = new Book("Pride and Prejudice", "Jane Austen", "302", true, "img/books/c50w37qeeosyydde5m5uv4fk75ro.jpeg");
+    const book2 = new Book("Crime and Punishment", "Fyodor Dostoyevsky", "411", false, "img/books/sliuygtth8qftz1mt6pzrsom284g.jpeg");
+    const book3 = new Book("The Divine Comedy", "Dante Alighieri", "288", false, "img/books/x9oilp1o53aty07nyh57oyogot20.jpeg");
+    const book4 = new Book("Madame Bovary", "Gustave Flaubert", "351", true, "img/books/gckzc30wo2b24guei1wfqr7hp84q.jpeg");
+    const book5 = new Book("The Odyssey", "Homer", "445", false, "img/books/ihwv965787rm0zvkj6hg3f2taasw.jpeg");
+    const book7 = new Book("Hamlet", "William Shakespeare", "295", false, "img/books/l7nwhydouo4phabualw7s5cin7gb.jpeg");
+    const book8 = new Book("Moby Dick", "Herman Melville", "323", false, "img/books/jzeie89rkkv1s2q7dwwgiysixnty.jpeg");
+    const book9 = new Book("The Great Gatsby", "F. Scott Fitzgerald", "203", false, "img/books/r85zaw5fj98tgc0y5rutjbkmowfy.jpeg");
+    const book10 = new Book("100 Years of Solitude", "Gabriel Garcia Marquez", "405", true, "img/books/kxk6iwn543doz8jqbs2sckh2fcot.jpeg");
 
+    myLibrary.push(book0);
     myLibrary.push(book1);
     myLibrary.push(book2);
     myLibrary.push(book3);
