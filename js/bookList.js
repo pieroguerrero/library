@@ -109,7 +109,7 @@ export class BookList {
 
     #toggelChange(toggle) {
         const bookID = toggle.id.split("-")[1];
-        const book = myLibrary.find(bookElement => bookElement.id == bookID);
+        const book = this.#arrBookList.find(bookElement => bookElement.id == bookID);
         book.wasRead = toggle.checked;
     }
 
@@ -132,8 +132,6 @@ export class BookList {
 
             toggle.addEventListener("change", this.#toggelChange.bind(this, toggle));
         }
-
-
     }
 
     refreshBookList() {
@@ -163,12 +161,14 @@ export class BookList {
     }
 
     searchBooks(textSearchTerm) {
-        const arrSearchResult = myLibrary.filter(book => {
+        const arrSearchResult = this.#arrBookList.filter(book => {
 
             if ((book.title.toUpperCase().includes(textSearchTerm.toUpperCase())) || (book.author.toUpperCase().includes(textSearchTerm.toUpperCase()))) {
                 return true;
             } else return false;
         });
+
+        this.#arrBookList = arrSearchResult;
         this.refreshBookList();
     }
 }

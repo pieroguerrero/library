@@ -162,7 +162,7 @@ function assignDashboardEvents() {
 
         if (e.key === "Enter") {
 
-            const textSearchTerm = this.value;
+            const textSearchTerm = btnSearch.value;
             bookLibrary.searchBooks(textSearchTerm);
         }
     });
